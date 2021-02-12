@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/addSuspiciousActivityMenuButton"
+        android:title="@string/create_suspicious_activity_title"
+        android:icon="@drawable/ic_add_activity"/>
+
+    <item
+        android:id="@+id/suspiciousActivitiesMenuButton"
+        android:title="@string/suspicious_activities_title"
+        android:icon="@drawable/ic_fire"/>
+
+    <item
+        android:id="@+id/suspiciousActivitiesStatsMenuButton"
+        android:title="@string/statistics_title"
+        android:icon="@drawable/ic_stats"/>
+
+</menu>
