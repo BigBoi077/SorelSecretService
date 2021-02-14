@@ -2,5 +2,5 @@
     <string name="app_name">SorelSecretService</string>
     <string name="suspicious_activities_title">Suspicious Activities</string>
     <string name="statistics_title">Statistics</string>
-    <string name="create_suspicious_activity_title">Add Suspicious Activity</string>
+    <string name="create_suspicious_activity_title">Add Activity</string>
 </resources>

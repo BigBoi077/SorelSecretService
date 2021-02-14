@@ -6,4 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".views.AddSuspiciousActivity">
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:itemBackground="@color/main_dark_blue"
+        app:itemIconTint="@color/accent_green"
+        app:itemTextColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/main_menu" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
