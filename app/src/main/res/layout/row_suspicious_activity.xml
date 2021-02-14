@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_dark_blue">
+
+    <TextView
+        android:id="@+id/behavior"
+        android:textColor="@color/white"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/location"
+        android:textColor="@color/white"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/confidenceLevel"
+        android:textColor="@color/white"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_weight="0.5" />
+
+    <ImageButton
+        android:id="@+id/actionChange"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_weight="0.5"
+        android:src="@drawable/ic_change_symbol"
+        android:backgroundTint="@color/white"
+        android:tint="@color/accent_green" />
+
+    <ImageButton
+        android:id="@+id/actionDelete"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_weight="0.5"
+        android:src="@drawable/ic_delete"
+        android:backgroundTint="@color/white"
+        android:tint="@color/design_default_color_error" />
+
+</LinearLayout>
