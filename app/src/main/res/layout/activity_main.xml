@@ -6,9 +6,18 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:menu="@menu/main_menu"
+    android:background="@drawable/ic_endless_constellation"
     tools:context=".views.MainActivity">
 
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/suspicious_activities_title"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_menu"
