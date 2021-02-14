@@ -6,4 +6,7 @@
     <string name="statsActivityTitle">Statistics</string>
     <string name="add_suspicious_activity_title">Suspicious Behaviors</string>
     <string name="action_add">New Suspicion</string>
+    <string name="actionSave">Save</string>
+    <string name="actionCancel">Cancel</string>
+    <string name="confidenceLevelHint">Confidence Level From 1 to 10</string>
 </resources>
