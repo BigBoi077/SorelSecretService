@@ -1,9 +1,8 @@
-package cegepst.example.sorelsecretservice
+package cegepst.example.sorelsecretservice.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.appcompat.app.ActionBar
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import cegepst.example.sorelsecretservice.R
 
 class MainActivity : AppCompatActivity() {
 
