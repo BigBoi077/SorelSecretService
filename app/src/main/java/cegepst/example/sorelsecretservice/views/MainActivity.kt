@@ -2,6 +2,7 @@ package cegepst.example.sorelsecretservice.views
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import cegepst.example.sorelsecretservice.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -13,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.addSuspiciousActivityMenuButton -> {
-                    val intent = Intent(this, AddSuspiciousActivity::class.java)
+                    val intent = Intent(this, AddSuspiciousBehavior::class.java)
                     intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
                     startActivityForResult(intent, 0)
                     overridePendingTransition(0, 0)
@@ -41,5 +42,8 @@ class MainActivity : AppCompatActivity() {
         initMenu()
     }
 
-
+    fun onAddNewSuspicion(view: View) {
+        val intent: Intent = Intent(this, CreateSuspicionActivity::class.java)
+        startActivity(intent)
+    }
 }
