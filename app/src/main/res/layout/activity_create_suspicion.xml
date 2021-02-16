@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/confidenceLevel"
+        android:id="@+id/confidenceLevelEntry"
         android:layout_width="272dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="42dp"
@@ -30,11 +30,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/locationList"
+        app:layout_constraintTop_toBottomOf="@+id/locationListEntry"
         app:layout_constraintVertical_bias="0.046" />
 
     <Spinner
-        android:id="@+id/behaviorList"
+        android:id="@+id/behaviorListEntry"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="104dp"
@@ -44,14 +44,14 @@
         app:layout_constraintTop_toBottomOf="@+id/activityTitle" />
 
     <Spinner
-        android:id="@+id/locationList"
+        android:id="@+id/locationListEntry"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:spinnerMode="dropdown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/behaviorList" />
+        app:layout_constraintTop_toBottomOf="@+id/behaviorListEntry" />
 
     <Button
         android:id="@+id/actionSave"
@@ -63,7 +63,7 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confidenceLevel"
+        app:layout_constraintTop_toBottomOf="@+id/confidenceLevelEntry"
         app:layout_constraintVertical_bias="0.352" />
 
     <Button
@@ -76,7 +76,7 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confidenceLevel"
+        app:layout_constraintTop_toBottomOf="@+id/confidenceLevelEntry"
         app:layout_constraintVertical_bias="0.352" />
 
 
