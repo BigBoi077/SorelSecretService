@@ -46,4 +46,12 @@ class MainActivity : AppCompatActivity() {
         val intent: Intent = Intent(this, CreateSuspicionActivity::class.java)
         startActivity(intent)
     }
+
+    fun onSuspiciousActivitiesUpdated() {
+        TODO("Not yet implemented")
+    }
+
+    fun onSuspiciousActivitiesAdded(size: Int) {
+        TODO("Not yet implemented")
+    }
 }
