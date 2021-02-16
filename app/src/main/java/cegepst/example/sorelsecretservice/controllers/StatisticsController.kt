@@ -1,0 +1,3 @@
+package cegepst.example.sorelsecretservice.controllers
+
+class StatisticsController
