@@ -6,11 +6,15 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "suspicious_activity")
 class SuspiciousActivity(
-    @ColumnInfo(name = "trust_level") val trustLevel: Int,
-    @ColumnInfo(name = "behavior_id") val behaviorID: Long,
-    @ColumnInfo(name = "location") val location: String,
-    @ColumnInfo(name = "date_creation") val createdDate: Long
+    @ColumnInfo(name = "trust_level") var trustLevel: Int,
+    @ColumnInfo(name = "behavior_id") var behaviorID: Long,
+    @ColumnInfo(name = "location") var location: String,
+    @ColumnInfo(name = "date_creation") var createdDate: String
 ) {
+    fun onActivitiesUpdated() {
+        TODO("Not yet implemented")
+    }
+
     @PrimaryKey(autoGenerate = true)
     var ID: Long = 0
 }

@@ -1,24 +1,30 @@
 package cegepst.example.sorelsecretservice.dao
 
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
+import cegepst.example.sorelsecretservice.models.ActivityWithBehavior
 import cegepst.example.sorelsecretservice.models.SuspiciousActivity
 
 interface SuspiciousActivityDAO {
-    @Query("SELECT * FROM suspiciousActivities")
+    @Query("SELECT * FROM suspicious_activity")
     fun getAll(): List<SuspiciousActivity>
 
-    @Query("SELECT * FROM suspiciousActivities WHERE id=:id")
+    @Transaction
+    @Query("SELECT * FROM suspicious_activity WHERE id=:id")
+    fun getWithBehavior(id: Long): ActivityWithBehavior
+
+    @Transaction
+    @Query("SELECT * FROM suspicious_activity")
+    fun getAllWithBehaviors(): List<ActivityWithBehavior>
+
+    @Query("SELECT * FROM suspicious_activity WHERE id=:id")
     fun get(id: Long): SuspiciousActivity
 
     @Insert
-    fun insert(activity: SuspiciousActivity): Long
+    fun insert(activity: ActivityWithBehavior): Long
 
     @Update
     fun update(activity: SuspiciousActivity)
 
     @Delete
-    fun delete(activity: SuspiciousActivity)
+    fun delete(activity: ActivityWithBehavior)
 }
