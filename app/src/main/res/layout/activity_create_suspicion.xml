@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/confidenceLevelEntry"
+        android:id="@+id/trustLevelEntry"
         android:layout_width="272dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="42dp"
@@ -55,6 +55,7 @@
 
     <Button
         android:id="@+id/actionSave"
+        android:onClick="saveSuspiciousActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="80dp"
@@ -63,11 +64,12 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confidenceLevelEntry"
+        app:layout_constraintTop_toBottomOf="@+id/trustLevelEntry"
         app:layout_constraintVertical_bias="0.352" />
 
     <Button
         android:id="@+id/actionCancel"
+        android:onClick="cancelSuspiciousActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
@@ -76,8 +78,9 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/confidenceLevelEntry"
-        app:layout_constraintVertical_bias="0.352" />
+        app:layout_constraintTop_toBottomOf="@+id/trustLevelEntry"
+        app:layout_constraintVertical_bias="0.352"
+        tools:ignore="OnClick" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

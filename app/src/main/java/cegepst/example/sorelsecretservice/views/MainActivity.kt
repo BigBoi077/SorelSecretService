@@ -71,8 +71,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onAddNewSuspicion(view: View) {
-        val intent: Intent = Intent(this, CreateSuspicionActivity::class.java)
-        startActivity(intent)
+        val intent = Intent(this, CreateSuspicionActivity::class.java)
+        intent.putExtra("activityTitle", "Create Character")
+        startActivityForResult(intent, REQUEST_CODE_ADD)
     }
 
     fun onSuspiciousActivitiesUpdated() {

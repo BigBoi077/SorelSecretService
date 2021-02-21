@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "behavior")
-data class Behaviour(
+class Behaviour(
     @ColumnInfo(name = "beahvior_name") var name: String,
     @ColumnInfo(name = "behavior_description") var description: String
 ) {
