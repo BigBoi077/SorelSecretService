@@ -6,9 +6,10 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import cegepst.example.sorelsecretservice.dao.BehaviourDAO
 import cegepst.example.sorelsecretservice.dao.SuspiciousActivityDAO
+import cegepst.example.sorelsecretservice.models.Behaviour
 import cegepst.example.sorelsecretservice.models.SuspiciousActivity
 
-@Database(entities = [SuspiciousActivity::class], version = 1)
+@Database(entities = [SuspiciousActivity::class, Behaviour::class], version = 1)
 abstract class AppStore : RoomDatabase() {
 
     abstract fun suspiciousActivitiesDAO(): SuspiciousActivityDAO
@@ -24,9 +25,9 @@ abstract class AppStore : RoomDatabase() {
         }
 
         private fun buildDatabase(context: Context) = Room.databaseBuilder(
-            context,
-            AppStore::class.java,
-            "Sorel-Secret-Service"
+                context,
+                AppStore::class.java,
+                "Sorel-Secret-Service-4"
         )
             .build()
     }

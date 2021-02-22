@@ -1,15 +1,18 @@
 package cegepst.example.sorelsecretservice.dao
 
+import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import cegepst.example.sorelsecretservice.models.Behaviour
 
+@Dao
 interface BehaviourDAO {
-    @Query("SELECT * FROM behaviors")
+
+    @Query("SELECT * FROM behavior")
     fun getAll(): List<Behaviour>
 
-    @Query("SELECT * FROM behaviors WHERE id=:id")
+    @Query("SELECT * FROM behavior WHERE ID=:id")
     fun get(id: Long): Behaviour
 
     @Insert

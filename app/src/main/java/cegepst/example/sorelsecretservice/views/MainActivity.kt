@@ -70,21 +70,53 @@ class MainActivity : AppCompatActivity() {
         initAdapter()
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode != RESULT_OK) {
+            return
+        }
+        when (requestCode) {
+            REQUEST_CODE_ADD -> addSuspiciousActivity(data ?: Intent())
+            REQUEST_CODE_EDIT -> editSuspiciousActivity(data ?: Intent())
+        }
+    }
+
+    private fun addSuspiciousActivity(data: Intent) {
+        val trustLevel = data.getStringExtra("trustLevel")
+        val behavior = data.getIntExtra("behavior", 0)
+        val location = data.getIntExtra("location", 0)
+        if (trustLevel != null) {
+            mainController.addSuspiciousActivity(trustLevel.toInt(), behavior, location)
+        }
+    }
+
+    private fun editSuspiciousActivity(data: Intent) {
+        val id = data.getLongExtra("id", 0)
+        val trustLevel = data.getStringExtra("trustLevel")
+        val behavior = data.getIntExtra("behavior", 0)
+        val location = data.getIntExtra("location", 0)
+        if (trustLevel != null) {
+            mainController.editActivity(id, trustLevel.toInt(), behavior, location)
+        }
+    }
+
     fun onAddNewSuspicion(view: View) {
         val intent = Intent(this, CreateSuspicionActivity::class.java)
         intent.putExtra("activityTitle", "Create Character")
         startActivityForResult(intent, REQUEST_CODE_ADD)
     }
 
-    fun onSuspiciousActivitiesUpdated() {
-        TODO("Not yet implemented")
-    }
-
-    fun onSuspiciousActivitiesAdded(size: Int) {
-        TODO("Not yet implemented")
-    }
-
     fun onModifySuspiciousActivity(id: Long) {
+        val intent = Intent(this, CreateSuspicionActivity::class.java)
+        intent.putExtra("id", id)
+        startActivityForResult(intent, REQUEST_CODE_EDIT)
+    }
 
+    fun onSuspiciousActivitiesUpdated() {
+        suspiciousActivityAdapter.notifyDataSetChanged()
+    }
+
+    fun onSuspiciousActivitiesAdded(position: Int) {
+        suspiciousActivityAdapter.notifyItemChanged(position)
     }
 }

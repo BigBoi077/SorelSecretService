@@ -1,6 +1,8 @@
 package cegepst.example.sorelsecretservice.controllers
 
 import cegepst.example.sorelsecretservice.models.ActivityWithBehavior
+import cegepst.example.sorelsecretservice.models.LocationEnumarator
+import cegepst.example.sorelsecretservice.models.SuspiciousActivity
 import cegepst.example.sorelsecretservice.stores.AppStore
 import cegepst.example.sorelsecretservice.views.MainActivity
 import kotlinx.coroutines.Dispatchers
@@ -51,10 +53,15 @@ class MainController(mainActivity: MainActivity) {
         )
     }
 
-    fun addSuspiciousActivity(suspiciousActivity: ActivityWithBehavior) {
+    fun addSuspiciousActivity(trustLevel: Int, behavior: Int, location: Int) {
+        val suspiciousActivity = SuspiciousActivity(
+                trustLevel = trustLevel,
+                behaviorID = behavior.toLong(),
+                location = LocationEnumarator.values().get(location).location,
+                getCurrentDate())
         GlobalScope.launch {
             val id = database.suspiciousActivitiesDAO().insert(suspiciousActivity)
-            suspiciousActivity.activity.ID = id
+            suspiciousActivity.ID = id
             suspiciousActivities.add(database.suspiciousActivitiesDAO().getWithBehavior(id))
             withContext(Dispatchers.Main) {
                 activity?.onSuspiciousActivitiesUpdated()
@@ -96,10 +103,29 @@ class MainController(mainActivity: MainActivity) {
     }
 
     fun deleteSuspiciousActivity(position: Int) {
-        val suspiciousActivity = suspiciousActivities[position]
+        val suspiciousActivity = suspiciousActivities[position].activity
         GlobalScope.launch {
             database.suspiciousActivitiesDAO().delete(suspiciousActivity)
             suspiciousActivities.removeAt(position)
+            withContext(Dispatchers.Main) {
+                activity?.onSuspiciousActivitiesUpdated()
+            }
+        }
+    }
+
+    fun editActivity(id: Long, trustLevel: Int, behavior: Int, location: Int) {
+        val activityWithBehavior = suspiciousActivities.find { activityWithBehavior -> activityWithBehavior.activity.ID == id }
+                ?: return
+        val suspiciousActivity = activityWithBehavior.activity
+
+        suspiciousActivity.trustLevel = trustLevel
+        suspiciousActivity.behaviorID = behavior.toLong()
+        suspiciousActivity.location = LocationEnumarator.values().get(location).location
+
+        GlobalScope.launch {
+            database.suspiciousActivitiesDAO().update(suspiciousActivity)
+            val updatedActivityWithBehavior = database.suspiciousActivitiesDAO().getWithBehavior(id)
+            suspiciousActivities[suspiciousActivities.indexOf(activityWithBehavior)] = updatedActivityWithBehavior
             withContext(Dispatchers.Main) {
                 activity?.onSuspiciousActivitiesUpdated()
             }

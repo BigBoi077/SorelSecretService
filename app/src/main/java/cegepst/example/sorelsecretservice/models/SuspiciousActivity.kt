@@ -11,10 +11,6 @@ class SuspiciousActivity(
     @ColumnInfo(name = "location") var location: String,
     @ColumnInfo(name = "date_creation") var createdDate: String
 ) {
-    fun onActivitiesUpdated() {
-        TODO("Not yet implemented")
-    }
-
     @PrimaryKey(autoGenerate = true)
     var ID: Long = 0
 }
