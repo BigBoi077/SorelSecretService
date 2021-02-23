@@ -13,7 +13,7 @@ class StatsActivity : AppCompatActivity() {
         bottomNavigationView.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.addSuspiciousActivityMenuButton -> {
-                    val intent = Intent(this, AddSuspiciousBehavior::class.java)
+                    val intent = Intent(this, BehaviorsActivity::class.java)
                     intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
                     startActivityForResult(intent, 0)
                     overridePendingTransition(0, 0)

@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
-        <activity android:name=".views.ModifySuspiciousActivity"></activity>
+        <activity android:name=".views.CreateBehaviorActivity"></activity>
+        <activity android:name=".views.ModifySuspiciousActivity" />
         <activity android:name=".views.CreateSuspicionActivity" />
         <activity android:name=".views.StatsActivity" />
-        <activity android:name=".views.AddSuspiciousBehavior" />
+        <activity android:name=".views.BehaviorsActivity" />
         <activity android:name=".views.MainActivity" />
         <activity android:name=".views.LoginActivity">
             <intent-filter>

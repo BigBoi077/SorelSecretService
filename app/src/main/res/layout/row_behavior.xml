@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/main_dark_blue">
 
     <TextView
-        android:id="@+id/behavior"
+        android:id="@+id/behaviorName"
         android:textColor="@color/white"
         android:layout_width="0dp"
         android:layout_height="42dp"
         android:layout_weight="1"/>
 
     <TextView
-        android:id="@+id/description"
+        android:id="@+id/behaviorDescription"
         android:textColor="@color/white"
         android:layout_width="0dp"
         android:layout_height="42dp"
         android:layout_weight="1.75" />
 
     <ImageButton
-        android:id="@+id/actionDelete"
+        android:id="@+id/actionDeleteBehaviorRow"
         android:layout_width="0dp"
         android:layout_height="42dp"
         android:layout_weight="0.3"

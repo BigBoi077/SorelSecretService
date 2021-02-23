@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import cegepst.example.sorelsecretservice.R
 import cegepst.example.sorelsecretservice.controllers.MainController
+import cegepst.example.sorelsecretservice.views.adapters.SuspiciousActivityAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 private const val REQUEST_CODE_ADD = 1
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.addSuspiciousActivityMenuButton -> {
-                    val intent = Intent(this, AddSuspiciousBehavior::class.java)
+                    val intent = Intent(this, BehaviorsActivity::class.java)
                     intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
                     startActivityForResult(intent, 0)
                     overridePendingTransition(0, 0)

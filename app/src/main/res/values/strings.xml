@@ -9,4 +9,6 @@
     <string name="actionSave">Save</string>
     <string name="actionCancel">Cancel</string>
     <string name="confidenceLevelHint">Trust Level From 1 to 10</string>
+    <string name="promptDelete">Are you sure you want to delete ?</string>
+    <string name="actionYes">Yes</string>
 </resources>

@@ -1,4 +1,4 @@
-package cegepst.example.sorelsecretservice.views
+package cegepst.example.sorelsecretservice.views.adapters
 
 import android.view.LayoutInflater
 import android.view.View
