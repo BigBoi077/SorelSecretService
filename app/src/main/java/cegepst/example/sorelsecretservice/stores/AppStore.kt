@@ -25,9 +25,9 @@ abstract class AppStore : RoomDatabase() {
         }
 
         private fun buildDatabase(context: Context) = Room.databaseBuilder(
-            context,
-            AppStore::class.java,
-            "Sorel-Secret-Service-5"
+                context,
+                AppStore::class.java,
+                "Sorel-Secret-Service-8"
         )
             .build()
     }

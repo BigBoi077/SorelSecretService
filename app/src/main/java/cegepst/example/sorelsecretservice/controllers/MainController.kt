@@ -56,7 +56,7 @@ class MainController(mainActivity: MainActivity) {
     fun addSuspiciousActivity(trustLevel: Int, behavior: Int, location: Int) {
         val suspiciousActivity = SuspiciousActivity(
                 trustLevel = trustLevel,
-                behaviorID = behavior.toLong(),
+                behaviorID = behavior.toLong() + 1L,
                 location = LocationEnumarator.values().get(location).location,
                 getCurrentDate())
         GlobalScope.launch {

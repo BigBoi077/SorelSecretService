@@ -23,7 +23,9 @@ class SuspiciousActivityAdapter(private val controller: MainController) :
         private val modifyActionView = itemView.findViewById<ImageButton>(R.id.actionChange)
 
         fun setContent(behaviorId: Long, location: String, confidenceLevel: Int) {
-
+            behaviorView.text = behaviorId.toString()
+            locationView.text = location
+            confidenceLevelView.text = confidenceLevel.toString()
         }
 
         fun bindListeners() {

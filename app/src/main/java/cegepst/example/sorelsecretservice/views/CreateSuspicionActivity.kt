@@ -85,8 +85,8 @@ class CreateSuspicionActivity : AppCompatActivity() {
 
     fun onSuspiciousActivityLoaded(suspiciousActivity: SuspiciousActivity) {
         headingView.text = "Edit Suspicious Activity"
-        trustLevelView.setText(suspiciousActivity.trustLevel)
-        behaviorListView.setSelection(suspiciousActivity.behaviorID.toInt())
+        trustLevelView.setText(suspiciousActivity.trustLevel.toString())
+        behaviorListView.setSelection(suspiciousActivity.behaviorID.toInt() - 1)
         for (location in LocationEnumarator.values()) {
             if (suspiciousActivity.location == location.location) {
                 val locationIndex = location.ordinal

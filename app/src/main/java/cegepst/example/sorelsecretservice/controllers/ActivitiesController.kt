@@ -1,5 +1,6 @@
 package cegepst.example.sorelsecretservice.controllers
 
+import android.util.Log
 import cegepst.example.sorelsecretservice.models.Behaviour
 import cegepst.example.sorelsecretservice.models.LocationEnumarator
 import cegepst.example.sorelsecretservice.models.SuspiciousActivity
@@ -43,6 +44,7 @@ class ActivitiesController(createSuspicionActivity: CreateSuspicionActivity) {
     fun loadActivity(id: Long) {
         GlobalScope.launch {
             val suspiciousActivity = database.suspiciousActivitiesDAO().get(id)
+            Log.d("FAIL !!!", "${suspiciousActivity.trustLevel}")
             loadedActivity = suspiciousActivity
             withContext(Dispatchers.Main) {
                 activity?.onSuspiciousActivityLoaded(suspiciousActivity)
