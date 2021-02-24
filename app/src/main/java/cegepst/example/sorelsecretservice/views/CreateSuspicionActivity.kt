@@ -76,6 +76,9 @@ class CreateSuspicionActivity : AppCompatActivity() {
     fun onBehaviorsLoaded(behaviors: List<String>) {
         val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, behaviors)
         behaviorListView.adapter = adapter
+        if (behaviors.size == 0) {
+            finish()
+        }
         controller.onActivitiesOrBehaviorsLoaded()
     }
 
@@ -86,7 +89,7 @@ class CreateSuspicionActivity : AppCompatActivity() {
     fun onSuspiciousActivityLoaded(suspiciousActivity: SuspiciousActivity) {
         headingView.text = "Edit Suspicious Activity"
         trustLevelView.setText(suspiciousActivity.trustLevel.toString())
-        behaviorListView.setSelection(suspiciousActivity.behaviorID.toInt() - 1)
+        behaviorListView.setSelection(0)
         for (location in LocationEnumarator.values()) {
             if (suspiciousActivity.location == location.location) {
                 val locationIndex = location.ordinal
