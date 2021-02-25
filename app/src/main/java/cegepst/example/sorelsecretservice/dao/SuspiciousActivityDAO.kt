@@ -29,4 +29,7 @@ interface SuspiciousActivityDAO {
 
     @Delete
     fun delete(activity: SuspiciousActivity)
+
+    @Query("SELECT * FROM suspicious_activity WHERE location=:location")
+    fun getWithLocation(location: String): List<SuspiciousActivity>
 }

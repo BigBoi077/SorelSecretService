@@ -3,10 +3,17 @@ package cegepst.example.sorelsecretservice.views
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import cegepst.example.sorelsecretservice.R
+import cegepst.example.sorelsecretservice.controllers.StatisticsController
+import cegepst.example.sorelsecretservice.views.adapters.StatisticsAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class StatsActivity : AppCompatActivity() {
+
+    private lateinit var controller: StatisticsController
+    private lateinit var statisticsAdapter: StatisticsAdapter
 
     private fun initMenu() {
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottom_navigation_menu)
@@ -39,5 +46,18 @@ class StatsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_stats)
         initMenu()
+        initAdapter()
+    }
+
+    private fun initAdapter() {
+        controller = StatisticsController(this)
+        statisticsAdapter = StatisticsAdapter(controller)
+        val recyclerView = findViewById<RecyclerView>(R.id.listStatistics)
+        recyclerView.adapter = statisticsAdapter
+        recyclerView.layoutManager = LinearLayoutManager(this)
+    }
+
+    fun onStatsCalculated() {
+        statisticsAdapter.notifyDataSetChanged()
     }
 }

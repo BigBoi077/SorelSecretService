@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:menu="@menu/main_menu"
     android:background="@drawable/ic_endless_constellation"
-    tools:context=".views.MainActivity">
+    android:orientation="vertical"
+    tools:context=".views.MainActivity"
+    tools:menu="@menu/main_menu">
 
     <TextView
         android:id="@+id/textView"
@@ -25,7 +25,6 @@
         android:id="@+id/listSuspiciousActivities"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_menu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />

@@ -3,7 +3,6 @@ package cegepst.example.sorelsecretservice.views
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -80,7 +79,6 @@ class BehaviorsActivity : AppCompatActivity() {
         val description = data.getStringExtra("description")
 
         if (description != null && name != null) {
-            Toast.makeText(this, "NEW BEHAVIOR $name | $description", Toast.LENGTH_SHORT).show()
             controller.addBehavior(name, description)
         }
     }

@@ -17,8 +17,7 @@ class BehaviorAdapter(private val controller: BehaviorsController) :
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val nameView = itemView.findViewById<TextView>(R.id.behaviorName)
         private val descriptionView = itemView.findViewById<TextView>(R.id.behaviorDescription)
-        private val deleteActionView =
-            itemView.findViewById<ImageButton>(R.id.actionDeleteBehaviorRow)
+        private val deleteActionView = itemView.findViewById<ImageButton>(R.id.actionDeleteBehaviorRow)
 
         fun setContent(name: String, description: String) {
             nameView.text = name
